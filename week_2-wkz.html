@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .p_1{
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            top: 100px;
+            left: 20px;
+            background-color: #ff8000;
+        }
+        .div_1{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 100px;
+            left: 200px;
+            border: 1px solid #ff2222;
+            background-color: rgb(54, 53, 53);
+        }
+        .div_2{
+            width: 800px;
+            height: 400px;
+            background-color: #c0c0c0;
+            margin-left: 100px;
+        }
+        #p_2{
+            width: 150px;
+            height: 100px;
+            background-color: #ff8000;
+        }
+        #p_3{
+            width: 150px;
+            height: 100px;
+            position: relative;
+            left: -50px;
+            background-color: #ff8000;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <h3>css绝对定位的应用</h3>
+    <hr/>
+    <p class="p_1">该段落是相对于页面定位的</p>
+    <div class="div_1">
+        <p class="p_1">该段落是相对于父元素div定位的</p>
+    </div>
+    <h3 style="margin-top:400px;">css相对定位的应用</h3>
+    <hr/>
+    <div class="div_2">
+        <p id="p_2">正常的段落</p>
+        <p id="p_3">相对于自己向左偏移
+        </p>
+    </div>
+    <script>
+        var _gift;
+        _gift="Hello!"
+        alert("_gift");
+    </script>
+</body>
+</html>
