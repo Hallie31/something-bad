@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./favicon.ico">
+    <title>耀阳前端学习平台</title>
+    <style>
+        *{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #header{
+            height: 100px;
+            /* width: 1300px; */
+            background-color: #f0f0f0;
+            
+        }
+        #logo{
+            float: left;
+            height: 42px;
+            width: 195px;
+            margin-top: 30px;
+            margin-left: 30px; 
+            background-color: red;
+            background: url(../前端/images/logo.jpg); 
+            background-repeat: no-repeat;
+           
+        }
+        .list{
+           
+            height: 40px;
+            width: 243px;
+            background-color: #f0f0f0;
+            margin-left: 280px;
+            position: relative;
+        }
+        .list-item{
+            float: left;
+            height: 40px;
+            width: 56px;
+            background-color: #f0f0f0;
+            /*padding: 30px;*/
+            position: relative;
+            margin-right: 25px;
+            margin-top: 40px;
+        }
+        .list-link{
+            color: black;
+            float: left;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 18px;
+            text-decoration: solid black;
+        }
+        .list-link:hover{
+            color: red;
+            border-bottom: 2px solid #00a4ff;
+        }
+        .search-text{
+            display: block;
+            float: left;
+            width: 361px;
+            height: 40px;
+            margin-left: 650px;
+            margin-top: -10px;
+            line-height: 50px;
+            border: 1px solid #00a4ff;
+            outline: 0;
+            font-size: 14px;
+            position: absolute;
+        }
+        /* .search-text:hover{
+            border: 1px solid #616161;
+        }
+        .search-text:active{
+            border: 1px solid #ff6700;
+        } */
+        .search-btn{
+            display: block;
+            float: left;
+            width: 49px;
+            height: 40px;
+            line-height: 24px;
+            margin-top: -10px;
+            margin-left: 1011px;
+            border: 1px solid #00a4ff;
+            outline: 0;
+            background-color: #00a4ff;
+            font-size: 24px;
+            text-decoration: solid;
+            color: #616161;   
+            position: absolute; 
+            background: url(./images/fa-search.png)
+        }
+        /* .search-btn:hover{
+            background-color: #ff6700;
+            color: white;
+        } */
+        
+        
+
+        #inform{
+            margin-left: 85px;
+            height: 100px;
+            width: 200px;
+            white-space:nowrap
+        }
+        #dili{
+            display: inline;
+            margin-left: 350px;
+            margin-top: 20px; 
+        }
+        #people{
+            margin-left: 585px;
+            margin-top:-25px;
+        }
+        #people img{
+            transition:all 0.8s ease 0s;
+            
+            /* height: 50px;
+            width: 50px;  */
+            border-radius:50%;
+            transition: all 0.6s;
+        }
+        
+        #people img:hover {
+            transform: rotate(-360deg);
+        }
+        
+        #center{
+            display: inline;
+            width: 60px;
+            margin-top: 5px;
+            /* margin-right:100px; */
+            margin-left: 630px;
+            position: absolute;
+            color: #666666;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 12px;
+            text-decoration: solid black;
+            
+        }
+        #name{
+            display: inline;
+            color: #666666;
+            /* margin-top: -14px; */
+            /* margin-right: 50px; */
+            margin-left: 780px;
+            width: 30px;
+            margin-top: -25px;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 12px;
+            text-decoration: solid black;
+            position: absolute;
+            
+        }
+
+        .banner{
+            height: 420px;
+            margin: 0 auto;
+            background-color:rgb(44, 6, 114);
+        }
+        .ban-nav{
+            margin-left: 74px;
+            width: 190px;
+            height: 420px;
+            background-color: rgba(0,0,0,.35);
+        }
+        .ban-list{
+            width: 234px;
+            height: 420px;
+            padding: 20px 0;
+            position: relative;
+        }
+        .ban-item{
+            width: 100%;
+            height:40px;
+            position: relative;
+        }
+        .ban-link{
+            display: block;
+            width: 100%;
+            height: 42px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 40px;
+            text-indent: 30px;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            text-decoration: solid black;
+        }
+        .ban-link:hover{
+            color:#00a4ff;
+        }
+        .circle {
+            width: 176px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 290px; 
+        }
+        .circle i {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: rgba(255, 255, 255, 0.4);
+            margin: 0 5px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+        .circle i:hover {
+            width: 20px;
+            background-color: #fff;
+        }
+        #my-list{
+            background-color: #fff;
+            margin-left: 1044px;
+            margin-top: -365px;
+            width: 228px;
+            height: 300px;
+
+        }
+        #my-list dt{
+            background-color: #9bceea;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            height: 50px;
+            width: 228px;
+            line-height: 50px;
+            font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+        }
+        #my-list dd{
+            padding: 15px 20px 0;
+           
+        }
+        #my-list h5{
+            color: #666666;
+            font-size: 16px;
+            font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            font-weight:normal;
+            margin-top: 8px;
+        }
+        #my-list p{
+            color: #666666;
+            font-size: 12px;
+            font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            font-weight: normal;
+            margin-bottom: 15px;
+           
+        }
+        #my-list hr{
+            color: #666666;
+        }
+        .my-btn{
+            display: block;
+            
+            width:190px;
+            height: 40px;
+            line-height: 40px;
+            /* margin-top: -10px;
+            margin-left: 1011px; */
+            border: 1px solid #22b0ff;
+            outline: 0;
+            background-color: #fff;
+            font-size: 16px;
+            text-decoration: solid;
+            color: #22b0ff;
+            text-align: center;   
+        }
+        .container{
+            height: 750px;
+            width: 1350px;
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        .con-nav{
+            margin-top: 10px;
+            align-self: center;
+            height: 61px;
+            width: 1200px;
+            background-color: #fff;
+            box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
+        }
+        #nav-cen{
+            margin-top: 19px;
+        } 
+        #nav-left{
+            display: block;
+            float: left;
+            color: #22b0ff;
+            font-size: 14px;
+            margin-left: 30px;
+            margin-right: 40px;
+            font-weight: bold;
+            line-height: 60px;
+            position: relative;
+        }
+
+        #nav-left::after{
+            content: "|";
+            color: #030303;
+            position: absolute;
+            font-size: 14px;
+            right: -20px;
+        }
+        .nav-center{
+            
+            color: black;
+            font-size: 14px;
+            font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            margin-right:35px;
+            position: relative;
+        }
+        .nav-center::after{
+            content: "|";
+            color: #030303;
+            position: absolute;
+            font-size: 14px;
+            right: -18px;
+            position: absolute;
+        }
+        .nav-center:hover{
+            color: red;
+        }
+        #nav-right{
+            display: block;
+            float: right;
+            color: #666666;
+            font-size: 13px;
+            margin-right: 20px;
+            line-height: 60px;
+            position: relative;
+        }
+        .con-inform{
+            align-self: center;
+            height: 570px;
+            width: 1200px;
+            margin-top: 15px;
+            background-color: #f0f0f0;
+            font-size: 12px;
+            color: #999999;
+        }
+        .con-inform img{
+            transition: all 0.4s;
+            overflow: hidden;
+
+        }
+        .con-inform li{
+            width: 228px;
+            height: 270px;
+            background-color: #fff;
+            float: left;
+            margin:15px 12px 15px 0;
+            transition: all 0.4s;
+
+        }
+        .con-inform li:hover{
+            box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
+            transform: translateY(-10px);
+            overflow: hidden;
+        }
+        .con-inform img:hover{
+            margin-left: -5px;
+        }
+        .con-inform h5{
+            color: black;
+            font-size: 14px;
+            font-family:  Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            margin: 18px 5px 15px 23px;
+            font-weight: normal;
+            line-height: 20px;
+
+        }
+        .con-inform span{
+            color: #ff7c2d;
+            font-size: 12px;
+            font-family:  Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            margin: 0 0 0 23px;
+        }
+        
+        .li-five{
+            margin-right: 0px;
+        }
+        .bot-inform{
+            float: right;
+            position: relative;; 
+            padding-right: 50px;
+            margin-right: 61px;
+        }
+        .app-btn{
+            display: block;
+            float: left;
+            width: 120px;
+            height: 35px;
+            line-height: 24px;
+            
+            margin-left: 74px; 
+            border: 1px solid #00a4ff;
+            outline: 0;
+            background-color:#fff;
+            font-size: 12px;
+            text-decoration: none;
+            color: #22b0ff;   
+            position: absolute; 
+        }
+        h6{
+            font-size: 12px;
+            font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            font-weight: normal;
+            line-height: 24px;
+            color: #666;
+            margin: 40px 50px 20px 74px;
+        }
+        .bot-dt{
+            font-size:14px;
+            color: #333333;
+            line-height: 30px;
+        }
+        .bot-dd{
+            font-size:12px;
+            color: #666666;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo"><a href="#"></a>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li class="list-item"><a href="" class="list-link">首页</a></li>
+            </ul>
+            <ul>
+                <li class="list-item"><a href="" class="list-link">课程</a></li>
+            </ul>
+            <ul>
+                <li class="list-item"><a href="" class="list-link">规划</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-search">
+            
+                <form action="" class="search">
+                        <input type="search" name="" class="search-text" placeholder=" 请输入关键字">
+                        <input type="submit" value="" class="search-btn iconfont">
+                </form>    
+        </div>
+        <div id="inform">
+            <ul><li><a href="#" id="center">个人中心</a></li></ul>
+            <ul><li id="dili">
+                 <a href="#" id="dili"><img src="./images/ld.png" alt=""></a>
+            </li>
+            <li id="people"> <a href="#" id="people"> <img src="./images/pic.png" alt=""> </a></li>
+        </ul>
+           
+           
+            <ul>
+                <li><a href="#" id="name">XXX</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="ban-nav">
+            <ul class="ban-list">
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+                <li class="ban-item"><a href="" class="ban-link">前端开发&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></a></li>
+            </ul>
+
+        </div>
+        <div class="circle">
+				<i class="current"></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+		</div>
+        <!-- <div class="box">
+            <div class="img-warp">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+            </div>
+        </div> -->
+        <div id="my-list">
+            <dl>
+					<dt>我的课程表</dt>
+					<dd>
+						<ul>
+							<li>
+                                <h5> HTML</h5>
+								<p>正在学习-使用按钮</p><hr>
+							</li>
+							<li>
+                                <h5> CSS</h5>
+								<p>正在学习-使用背景</p><hr>
+							</li>
+							<li>
+                                <h5> JavaScript</h5>
+								<p>正在学习-使用函数</p>
+							</li>
+						</ul>
+						<form action="">
+                            <input type="submit" value="全部课程" class="my-btn">
+                        </form>
+					</dd>
+			</dl>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="con-nav">
+            <ul><li><a href="#" id="nav-left">精品推荐</a></li></ul>
+            <ul><li><a href="#" id="nav-right">修改兴趣</a></li></ul>
+            <ul>
+                <li id="nav-cen">
+                    <a href="#" class="nav-center">HTML</a>
+                    <a href="#" class="nav-center">CSS</a>
+                    <a href="#" class="nav-center">JavaScript</a>
+                    <a href="#" class="nav-center">jQuery</a>
+                    <a href="#" class="nav-center">VUE</a>
+                    <a href="#" class="nav-center">React</a>
+                    <a href="#" class="nav-center">angular</a>
+                    <a href="#" class="nav-center">HTML5</a>
+                    <a href="#" class="nav-center">CSS3</a>
+                    <a href="#" class="nav-center">bootstrap</a>
+                </li>
+            </ul>
+        </div>
+        <h4 style="font-size:18px; color:#666666;margin:35px 0 0 74px; font-weight: normal;">精品推荐</h4>
+        <a href="#" style="display:block;float: right;width:100px;font-size:12px; color:#050505;margin:-25px 0 0 1205px;">查看全部</a>
+        <div class="con-inform">
+            <ul>
+                <li>
+                    <a href="#">  <img src="./images/pic1.png" alt="">
+                    </a>
+                    <h5>
+                            JavaScript 电子商务系统实战 <br> 项目演练
+                    </h5>
+                    <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                    <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习</li>
+            </ul>
+            <ul>
+                <li class="li-five">
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li>
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+            <ul>
+                <li class="li-five">
+                        <a href="">  <img src="./images/pic1.png" alt="">
+                        </a>
+                        <h5>
+                                JavaScript 电子商务系统实战 <br> 项目演练
+                        </h5>
+                        <span>高级</span> • 1125人在学习
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom" style="background-color:#fff;height:360px;padding:30px 0; display: flex;">
+        <div class="bot-left">
+                <h6>耀阳在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程。<br/>
+                        © 2018年YY Inc.保留所有权利。-冀ICP备18016532号</h6>
+                <form action="" class="app">
+                        <input type="submit" value="下载APP" class="app-btn ">
+                </form>    
+        </div>
+        <div class="about" style="float:right;margin-left:800px;position: absolute;">
+            <dl class="bot-inform">
+                    <dt class="bot-dt">关于耀阳网</dt>
+                    <dd class="bot-dd">关于</dd>
+                    <dd class="bot-dd">管理团队</dd>
+                    <dd class="bot-dd">工作机会</dd>
+                    <dd class="bot-dd">客户服务</dd>
+                    <dd class="bot-dd">帮助</dd>
+            </dl>
+            <dl class="bot-inform">
+                    <dt class="bot-dt">关于耀阳网</dt>
+                    <dd class="bot-dd">关于</dd>
+                    <dd class="bot-dd">管理团队</dd>
+                    <dd class="bot-dd">工作机会</dd>
+                    <dd class="bot-dd">客户服务</dd>
+                    <dd class="bot-dd">帮助</dd>
+            </dl>
+            <dl class="bot-inform">
+     	 			<dt class="bot-dt">关于耀阳网</dt>
+     	 			<dd class="bot-dd">关于</dd>
+     	 			<dd class="bot-dd">管理团队</dd>
+     	 			<dd class="bot-dd">工作机会</dd>
+     	 			<dd class="bot-dd">客户服务</dd>
+     	 			<dd class="bot-dd">帮助</dd>
+              </dl>
+        </div>
+    </div>
+</body>
+</html>
